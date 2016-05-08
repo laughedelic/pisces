@@ -1,9 +1,14 @@
 function key_bindings
 
-  __match_pair_bind '(' '()'
-  __match_pair_bind '[' '[]'
-  __match_pair_bind '{' '{}'
-  __match_pair_bind '"' '""'
-  __match_pair_bind "'" "\'\'"
+  bind '(' '__insert_pair \( \)'
+  bind ')' '__skip_char \)'
 
+  bind '[' '__insert_pair \[ \]'
+  bind ']' '__skip_char \]'
+
+  bind '{' '__insert_pair \{ \}'
+  bind '}' '__skip_char \}'
+
+  bind '"' '__skip_char \"; or __insert_pair "" \"'
+  bind "'" "__skip_char \'; or __insert_pair '' \'"
 end
