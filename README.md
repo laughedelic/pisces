@@ -12,7 +12,7 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
 
 - [x] autocloses pair symbol: `... |` + `(` => `... (|)`
 - [x] skips the closing symbol: `... |)` + `)` => `... )|`
-- [ ] removes empty pairs: `...(|)` + `backspace` => `...`
+- [x] removes empty pairs: `...(|)` + `backspace` => `...`
 - [ ] doesn't autoclose escaped symbols: `...\|` + `(` => `...\(|`
 - [ ] configurable set of symbol pairs
 - [ ] conditional autoclosing (don't autoclose if the cursor is on certain symbols)
