@@ -1,16 +1,8 @@
 function key_bindings
 
-  bind '(' '__insert_pair \( \)'
-  bind ')' '__skip_char \)'
+  for pair in $match_pairs
+    __bind_pair (string split ',' $pair)
+  end
 
-  bind '[' '__insert_pair \[ \]'
-  bind ']' '__skip_char \]'
-
-  bind '{' '__insert_pair \{ \}'
-  bind '}' '__skip_char \}'
-
-  bind '"' '__skip_char \"; or __insert_pair "" \"'
-  bind "'" "__skip_char \'; or __insert_pair '' \'"
-
-  bind \b '__remove_empty_pair \( \); or __remove_empty_pair \[ \]; or __remove_empty_pair \{ \}; or __remove_empty_pair \" \"; or __remove_empty_pair \\\' \\\'; or commandline -f backward-delete-char'
+  bind \b __backspace_override
 end

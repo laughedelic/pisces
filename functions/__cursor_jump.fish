@@ -1,6 +1,6 @@
-function __move_cursor \
+function __cursor_jump \
   -a n \
-  -d "Moves cursor '+n/-n' positions "
+  -d "Moves cursor by n/-n characters"
 
   test -z $n; and set n 0
 

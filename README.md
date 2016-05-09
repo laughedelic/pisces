@@ -14,7 +14,7 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
 - [x] skips the closing symbol: `... |)` + `)` => `... )|`
 - [x] removes empty pairs: `...(|)` + `backspace` => `...`
 - [ ] doesn't autoclose escaped symbols: `...\|` + `(` => `...\(|`
-- [ ] configurable set of symbol pairs
+- [x] configurable set of symbol pairs: `set -U match_pairs '< >' $match_pairs`
 - [ ] conditional autoclosing (don't autoclose if the cursor is on certain symbols)
 
 
