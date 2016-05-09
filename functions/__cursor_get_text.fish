@@ -6,8 +6,9 @@ function __cursor_get_text \
   test -z $len; and set len 1
 
   set cur (commandline -C)
+  set everything (string join " " ( string split \n (commandline -b) ) )
   string sub \
     --start (math "$cur + $pos + 1") \
     --length $len \
-    (commandline -b)
+    $everything
 end

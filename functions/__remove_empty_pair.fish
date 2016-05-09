@@ -8,10 +8,10 @@ function __remove_empty_pair \
 
   if [ (__cursor_get_text -$left_len $length) = "$left$right" ]
 
-    __cursor_jump $right_len
-    for i in (seq 1 $length)
-      commandline -f backward-delete-char
-    end
+    # __cursor_jump $right_len
+    # for i in (seq 1 $length)
+    commandline -f delete-char backward-delete-char
+    # end
 
     return 0
   end
