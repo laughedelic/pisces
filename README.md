@@ -6,20 +6,20 @@
 [![](https://img.shields.io/badge/contact-gitter_chat-dd1054.svg)](https://gitter.im/laughedelic/pisces)
 
 
-_pisces_ is a plugin for [fish](http://fish.sh) that helps you to work with paired symbols like `()` and `''` in the command line. Just as in your favorite text editor!
+_pisces_ `['paɪsiz]` is a plugin for [fish](http://fish.sh) that helps you to work with paired symbols like `()` and `''` in the command line. Just as in your favorite text editor!
 
 ### Features
 
 Here `|` denotes the current cursor position. No manual cursor motion involved :sparkles:
 
-- [x] autocloses pair symbol:
-  `... |` + <kbd>(</kbd> ⇒
+- [x] autocloses pair symbol:  
+  `... |` + <kbd>(</kbd> ⇒  
   `... (|)`
-- [x] skips the closing symbol:
-  `...|)` + <kbd>)</kbd> ⇒
+- [x] skips the closing symbol:  
+  `...|)` + <kbd>)</kbd> ⇒  
   `... )|`
-- [x] removes empty pairs:
-  `...(|)` + <kbd>backspace</kbd> ⇒
+- [x] removes empty pairs:  
+  `...(|)` + <kbd>backspace</kbd> ⇒  
   `...`
 - [x] the set of pairs is configurable
 
