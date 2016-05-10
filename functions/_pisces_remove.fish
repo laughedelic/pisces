@@ -6,10 +6,10 @@ function _pisces_remove -a left right -d "Removes an empty pair (left-right) or 
 
     if [ (_pisces_lookup -$left_len $length) = "$left$right" ]
 
-        # _pisces_jump $right_len
-        # for i in (seq 1 $length)
-        commandline -f delete-char backward-delete-char
-        # end
+        _pisces_jump $right_len
+        for i in (seq 1 $length)
+            commandline -f backward-delete-char
+        end
 
         return 0
     end
