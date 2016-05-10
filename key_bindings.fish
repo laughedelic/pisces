@@ -1,8 +1,8 @@
 function key_bindings
 
-  for pair in $match_pairs
-    __bind_pair (string split ',' $pair)
-  end
+    for pair in $pisces_pairs
+        _pisces_bind_pair (string split ',' $pair)
+    end
 
-  bind \b __backspace_override
+    bind \b _pisces_backspace
 end
