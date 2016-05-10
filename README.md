@@ -26,21 +26,20 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
 
 Some ideas for further development:
 
-- [ ] ignore escaped symbols: `...\|` + `(` => `...\(|`
+- [ ] ignore escaped symbols: `...\|` + <kbd>(</kbd> => `...\(|` (or autoclose them?)
 - [ ] remove an empty pair even when the cursor is after it (or go inside?)
 - [ ] conditional autoclosing (don't autoclose if the cursor is before/after certain symbols)
+- [ ] optional <kbd>alt</kbd>+symbol keybindings that do something else (for example, surround the current token)
 
 If you have any other ideas or feature requests, open an issue or write me in the [chat](https://gitter.im/laughedelic/pisces).
 
 ### Installation
 
-Use [fisherman](https://github.com/fisherman/fisherman):
+Just use [fisherman](https://github.com/fisherman/fisherman):
 
 ```fish
 fisher install laughedelic/pisces
 ```
-
-Then open a new fish session to reload keybindings.
 
 This plugin **requires fish v2.3** (currently in [beta](https://github.com/fish-shell/fish-shell/releases/tag/2.3b2)) for two reasons:
 - there was a bug [#2210](https://github.com/fish-shell/fish-shell/issues/2210) in v2.2 which would brake quotes handling
@@ -52,15 +51,15 @@ This plugin **requires fish v2.3** (currently in [beta](https://github.com/fish-
 You can set the `$pisces_pairs` universal variable and launch a new fish session to reload key bindings:
 
 ```fish
-set -U pisces_pairs $pisces_pairs '<,>' '«,»'
+set -U pisces_pairs $pisces_pairs '<,>' '`,`' '«,»'
 ```
 
 Note that at the moment _pisces_ works correctly only with single-symbol delimiters.
 
 The default set of pairs:
 
-- `()` parenthesis
-- `[]` brackets
-- `{}` braces
-- `""` double quotes
-- `''` single quotes
+- `(,)` parenthesis
+- `[,]` brackets
+- `{,}` braces
+- `","` double quotes
+- `','` single quotes
