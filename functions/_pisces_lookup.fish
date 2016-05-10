@@ -8,5 +8,7 @@ function _pisces_lookup -a pos len -d "Returns the text at the given position re
     set cur (commandline -C)
     set input (commandline -b)
 
-    string sub --start (math "$cur + $pos + 1") --length $len "$input" # important to quote it, because it may have newlines
+    # NOTE: it's important to quote $input, because it may have newlines
+    string sub --start (math "$cur + $pos + 1") --length $len "$input" ^/dev/null
+    or echo '' # if it's out of bounds (probably better to return cut part)
 end
