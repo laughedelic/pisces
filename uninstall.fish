@@ -4,7 +4,7 @@ for pair in $pisces_pairs
     end
 end
 
-# this doesn't really work "/
 bind \b backward-delete-char
+bind \177 backward-delete-char
 
 set -e pisces_pairs
