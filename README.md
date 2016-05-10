@@ -12,42 +12,47 @@ _pisces_ `['paɪsiz]` is a plugin for [fish](http://fish.sh) that helps you to w
 
 Here `|` denotes the current cursor position. No manual cursor motion involved :sparkles:
 
-- [x] autocloses pair symbol:  
+- autocloses pair symbol:  
   `... |` + <kbd>(</kbd> ⇒  
   `... (|)`
-- [x] skips the closing symbol:  
+- skips the closing symbol:  
   `...|)` + <kbd>)</kbd> ⇒  
   `... )|`
-- [x] removes empty pairs:  
+- removes empty pairs:  
+  `...([|])` + <kbd>backspace</kbd> ⇒  
   `...(|)` + <kbd>backspace</kbd> ⇒  
-  `...`
-- [x] the set of pairs is configurable
+  `...|`
+- the set of pairs is configurable
 
-<!--
-- [ ] ignores escaped symbols: `...\|` + `(` => `...\(|`
-- [ ] conditional autoclosing (don't autoclose if the cursor is on certain symbols)
- -->
+Some ideas for further development:
+
+- [ ] ignore escaped symbols: `...\|` + `(` => `...\(|`
+- [ ] remove an empty pair even when the cursor is after it (or go inside?)
+- [ ] conditional autoclosing (don't autoclose if the cursor is before/after certain symbols)
+
+If you have any other ideas or feature requests, open an issue or write me in the [chat](https://gitter.im/laughedelic/pisces).
 
 ### Installation
 
-Use [fisherman](https://github.com/fisherman/fisherman) and launch a new session fish to reload key bindings:
+Use [fisherman](https://github.com/fisherman/fisherman):
 
 ```fish
-fisher install laughedelic/pisces; and fish
+fisher install laughedelic/pisces
 ```
 
-This plugin requires fish v2.3 (currently in [beta](https://github.com/fish-shell/fish-shell/releases/tag/2.3b2)) for two reasons:
+Then open a new fish session to reload keybindings.
+
+This plugin **requires fish v2.3** (currently in [beta](https://github.com/fish-shell/fish-shell/releases/tag/2.3b2)) for two reasons:
 - there was a bug [#2210](https://github.com/fish-shell/fish-shell/issues/2210) in v2.2 which would brake quotes handling
 - the new `string` builtin is just radical and simplifies life a lot
 
 
 #### Changing the set of pairs
 
-You can set the `$pisces_pairs` universal variable and launch a new session to reload the key bindings:
+You can set the `$pisces_pairs` universal variable and launch a new fish session to reload key bindings:
 
 ```fish
 set -U pisces_pairs $pisces_pairs '<,>' '«,»'
-fish
 ```
 
 Note that at the moment _pisces_ works correctly only with single-symbol delimiters.
