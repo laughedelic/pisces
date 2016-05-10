@@ -33,7 +33,7 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
 Use [fisherman](https://github.com/fisherman/fisherman) and launch a new session fish to reload key bindings:
 
 ```fish
-fisherman install laughedelic/pisces; and fish
+fisher install laughedelic/pisces; and fish
 ```
 
 This plugin requires fish v2.3 (currently in [beta](https://github.com/fish-shell/fish-shell/releases/tag/2.3b2)) for two reasons:
