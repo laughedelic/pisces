@@ -24,14 +24,30 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
   `...|`
 - the set of pairs is configurable
 
-Some ideas for further development:
+Some ideas for further development (prioritized features are check-marked):
 
-- [ ] ignore escaped symbols: `...\|` + <kbd>(</kbd> => `...\(|` (or autoclose them?)
-- [ ] remove an empty pair even when the cursor is after it (or go inside?)
-- [ ] conditional autoclosing (don't autoclose if the cursor is before/after certain symbols)
-- [ ] optional <kbd>alt</kbd>+symbol keybindings that do something else (for example, surround the current token)
+- autoclosing:
+  + [x] ignore closing `"` when trying to autocomplete a var (see [#1](https://github.com/laughedelic/pisces/issues/1))
+  + [ ] general conditional autoclosing (don't autoclose if the cursor is before/after certain symbols) or just some particular cases:
+    * [ ] ignore escaped symbols: `...\|` + <kbd>(</kbd> => `...\(|` (or autoclose them?)
+    * [ ] ignore single quote (apostrophe) in comments
+  + [ ] optional spaces in the autoclosed pair (at least for brackets): `[ | ]`
+  + [ ] multi-character pairs, similar to simple code-snippets: `for | end`, `if | end`, `begin; |; end`, etc.
 
-If you have any other ideas or feature requests, open an issue or write me in the [chat](https://gitter.im/laughedelic/pisces).
+- empty pairs removal:
+  + [ ] treat pair as empty if it has only whitespaces inside: `...(|  )` + <kbd>backspace</kbd> ⇒ `...|`
+  + [ ] remove an empty pair even when the cursor is after it (or go inside?): `...()|` + <kbd>backspace</kbd> ⇒ `...|` or `...(|)` (this is probably confusing)
+  + [ ] ~~remove on delete (same as with backspace)~~: `...(|)` + <kbd>delete</kbd> ⇒ `...|`
+  + [ ] key bindings for `^W` and similar? `foo bar(|)` + <kbd>ctrl</kbd><kbd>w</kbd> ⇒ `foo |`
+
+- [ ] optional <kbd>alt</kbd>+symbol keybindings that do something else, for example:
+  + surround the current token
+  + just insert single symbol
+
+- [ ] test with the vim-mode
+
+If you have any other ideas or feature requests, feel free to open an issue or just write me in the [chat](https://gitter.im/laughedelic/pisces).
+
 
 ### Installation
 
