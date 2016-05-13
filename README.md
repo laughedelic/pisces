@@ -45,6 +45,8 @@ Some ideas for further development (prioritized features are check-marked):
   + just insert single symbol
 
 - [ ] test with the vim-mode
+- [ ] autoreload on the `$pisces_pairs` var changes
+- [ ] restore previous keybindings instead of erasing them
 
 If you have any other ideas or feature requests, feel free to open an issue or just write me in the [chat](https://gitter.im/laughedelic/pisces).
 
