@@ -11,4 +11,7 @@ function key_bindings
     bind \b _pisces_backspace
     # Terminal.app sends DEL code on ⌫:
     bind \177 _pisces_backspace
+
+    # overrides TAB to provide completion of vars before a closing '"'
+    bind \t _pisces_complete
 end

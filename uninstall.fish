@@ -4,7 +4,8 @@ for pair in $pisces_pairs
     end
 end
 
-bind \b backward-delete-char
+bind \b   backward-delete-char
 bind \177 backward-delete-char
+bind \t   complete
 
 set -e pisces_pairs
