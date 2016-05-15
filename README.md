@@ -24,25 +24,25 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
   `...|`
 - the set of pairs is configurable
 
-Some ideas for further development (prioritized features are check-marked):
+Some ideas for further development:
 
 - autoclosing:
-  + [x] ignore closing `"` when trying to autocomplete a var (see [#1](https://github.com/laughedelic/pisces/issues/1))
-  + [ ] general conditional autoclosing (don't autoclose if the cursor is before/after certain symbols) or just some particular cases:
+  + [x] ignore closing `"` when trying to autocomplete a var (see [v0.3.0](https://github.com/laughedelic/pisces/releases/tag/v0.3.0))
+  + [ ] context-dependent autoclosing. Some particular cases:
+    * [ ] (?) autoclose only when surrounded by non-word characters
     * [ ] ignore escaped symbols: `...\|` + <kbd>(</kbd> => `...\(|` (or autoclose them?)
-    * [ ] ignore single quote (apostrophe) in comments
-  + [ ] optional spaces in the autoclosed pair (at least for brackets): `[ | ]`
+    * [ ] (?) ignore single quote (apostrophe) in the comments
   + [ ] multi-character pairs, similar to simple code-snippets: `for | end`, `if | end`, `begin; |; end`, etc.
 
 - empty pairs removal:
   + [ ] treat pair as empty if it has only whitespaces inside: `...(|  )` + <kbd>backspace</kbd> ⇒ `...|`
-  + [ ] remove an empty pair even when the cursor is after it (or go inside?): `...()|` + <kbd>backspace</kbd> ⇒ `...|` or `...(|)` (this is probably confusing)
-  + [ ] ~~remove on delete (same as with backspace)~~: `...(|)` + <kbd>delete</kbd> ⇒ `...|`
+  + [ ] ~~remove an empty pair even when the cursor is after it (or go inside?)~~: `...()|` + <kbd>backspace</kbd> ⇒ `...|` or `...(|)` (this is probably confusing)
   + [ ] key bindings for `^W` and similar? `foo bar(|)` + <kbd>ctrl</kbd><kbd>w</kbd> ⇒ `foo |`
 
 - [ ] optional <kbd>alt</kbd>+symbol keybindings that do something else, for example:
   + surround the current token
   + just insert single symbol
+  + jump after the closing symbol
 
 - [ ] test with the vim-mode
 - [ ] autoreload on the `$pisces_pairs` var changes
