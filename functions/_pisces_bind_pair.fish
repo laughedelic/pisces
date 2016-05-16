@@ -8,10 +8,10 @@ function _pisces_bind_pair -a left right -d "Creates bindings for the given pair
 
     if [ $left = $right ]
 
-        bind $r "_pisces_skip $right; or _pisces_append $right"
-    else # if $some_special_setting
+        bind $r "_pisces_skip $right; or _pisces_surround '' $right"
+    else
 
-        bind $l "commandline -i $left; and _pisces_append $right"
+        bind $l "_pisces_surround $left $right"
         bind $r "_pisces_skip $right"
     end
 end
