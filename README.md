@@ -44,7 +44,7 @@ Some ideas for further development:
   + just insert single symbol
   + jump after the closing symbol
 
-- [ ] [#3](https://github.com/laughedelic/pisces/pull/3): support for vi-mode
+- [x] [#3](https://github.com/laughedelic/pisces/pull/3): support for vi-mode
 - [ ] autoreload on the `$pisces_pairs` var changes
 - [ ] restore previous keybindings instead of erasing them
 
