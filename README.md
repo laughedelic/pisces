@@ -28,11 +28,11 @@ Some ideas for further development:
 
 - autoclosing:
   + [x] ignore closing `"` when trying to autocomplete a var (see [v0.3.0](https://github.com/laughedelic/pisces/releases/tag/v0.3.0))
-  + [ ] context-dependent autoclosing. Some particular cases:
-    * [ ] (?) autoclose only when surrounded by non-word characters
-    * [ ] ignore escaped symbols: `...\|` + <kbd>(</kbd> => `...\(|` (or autoclose them?)
+  + [ ] [#5](https://github.com/laughedelic/pisces/pull/5) (WIP): context-dependent autoclosing. Some particular cases:
+    * [x] (?) autoclose only when surrounded by non-word characters
+    * [x] ignore escaped symbols: `...\|` + <kbd>(</kbd> => `...\(|` (or autoclose them?)
     * [ ] (?) ignore single quote (apostrophe) in the comments
-  + [ ] multi-character pairs, similar to simple code-snippets: `for | end`, `if | end`, `begin; |; end`, etc.
+    + [x] multi-character pairs, similar to simple code-snippets: `for | end`, `if | end`, `begin; |; end`, etc.
 
 - empty pairs removal:
   + [ ] treat pair as empty if it has only whitespaces inside: `...(|  )` + <kbd>backspace</kbd> ⇒ `...|`
@@ -44,7 +44,7 @@ Some ideas for further development:
   + just insert single symbol
   + jump after the closing symbol
 
-- [ ] test with the vim-mode
+- [ ] [#3](https://github.com/laughedelic/pisces/pull/3): support for vi-mode
 - [ ] autoreload on the `$pisces_pairs` var changes
 - [ ] restore previous keybindings instead of erasing them
 
