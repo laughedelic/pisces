@@ -29,9 +29,9 @@ Some ideas for further development:
 - autoclosing:
   + [x] ignore closing `"` when trying to autocomplete a var (see [v0.3.0](https://github.com/laughedelic/pisces/releases/tag/v0.3.0))
   + [ ] [#5](https://github.com/laughedelic/pisces/pull/5) (WIP): context-dependent autoclosing. Some particular cases:
-    * [x] (?) autoclose only when surrounded by non-word characters
+    * [x] **?** autoclose only when surrounded by non-word characters
     * [x] ignore escaped symbols: `...\|` + <kbd>(</kbd> => `...\(|` (or autoclose them?)
-    * [ ] (?) ignore single quote (apostrophe) in the comments
+    * [ ] **?** ignore single quote (apostrophe) in the comments
     + [x] multi-character pairs, similar to simple code-snippets: `for | end`, `if | end`, `begin; |; end`, etc.
 
 - empty pairs removal:
