@@ -4,7 +4,7 @@ function key_bindings
     or set -U pisces_pairs '(,)' '[,]' '{,}' '","' "','"
 
     for pair in $pisces_pairs
-        _pisces_bind_pair (string split ',' $pair)
+        _pisces_bind_pair (string split -- ',' $pair)
     end
 
     # normal backspace, also known as \010 or ^H:
