@@ -1,15 +1,17 @@
+# FIXME: won't work as expected if user has changed the mode after installation
+set -l _pisces_bind_mode default
+if [ "$fish_key_bindings" = 'fish_vi_key_bindings' ]
+    set _pisces_bind_mode insert
+end
+
 for pair in $pisces_pairs
     for c in (string split -- ',' $pair)
-        bind -e $c
+        bind -e -M $_pisces_bind_mode $c
     end
 end
 
-bind \b   backward-delete-char
-bind \177 backward-delete-char
-bind \t   complete
+bind -M $_pisces_bind_mode \b   backward-delete-char
+bind -M $_pisces_bind_mode \177 backward-delete-char
+bind -M $_pisces_bind_mode \t   complete
 
 set -e pisces_pairs
-
-# TODO:
-# eval $__fish_active_key_bindings
-# fish_user_key_bindings
