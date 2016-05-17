@@ -1,5 +1,5 @@
 for pair in $pisces_pairs
-    for c in (string split ',' $pair)
+    for c in (string split -- ',' $pair)
         bind -e $c
     end
 end

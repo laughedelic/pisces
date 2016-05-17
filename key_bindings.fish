@@ -4,12 +4,12 @@ function key_bindings
     # or set -U pisces_pairs '(,)' '[,]' '{,}' '","' "','"
     or set -U pisces_pairs '(,)' '[,]' '{,}' '","' "','"
 
-    # for pair in $pisces_pairs
-    #     _pisces_bind_pair (string split ',' $pair)
-    # end
+    for pair in $pisces_pairs
+        _pisces_bind_pair (string split -- ',' $pair)
+    end
 
     function pattern
-        string join \t $argv
+        string join -- \t $argv
     end
 
     set -q pisces_patterns
@@ -22,19 +22,19 @@ function key_bindings
         # (pattern 'begin'  ';'  '\W'  '; '  '; end;') \
 
     function _pisces_bind_pattern -a l_ctx trg r_ctx l r
-        set lc (string escape -n $l_ctx)
-        set rc (string escape -n $r_ctx)
+        set lc (string escape -n -- $l_ctx)
+        set rc (string escape -n -- $r_ctx)
 
-        set l (string escape -n $l)
-        set r (string escape -n $r)
+        set l (string escape -n -- $l)
+        set r (string escape -n -- $r)
 
-        set t (string escape -n $trg)
+        set t (string escape -n -- $trg)
 
-        bind $trg "_pisces_match $lc $rc; and _pisces_surround $l $r; or commandline -i $t"
+        bind $trg "_pisces_match $lc $rc; and _pisces_surround $l $r; or commandline -i -- $t"
     end
 
     for p in $pisces_patterns
-        _pisces_bind_pattern (string split \t $p)
+        _pisces_bind_pattern (string split -- \t $p)
     end
 
     # normal backspace, also known as \010 or ^H:
