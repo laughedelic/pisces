@@ -1,6 +1,6 @@
 ## [`pisces ☯ 双鱼`](https://en.wikipedia.org/wiki/Pisces_(astrology))
 
-[![](https://img.shields.io/badge/fish--shell-2.3b2-blue.svg)](https://github.com/fish-shell/fish-shell/releases/tag/2.3b2)
+[![](https://img.shields.io/badge/fish--shell-2.3+-blue.svg)](https://github.com/fish-shell/fish-shell/releases)
 [![](https://img.shields.io/badge/license-LGPLv3-blue.svg)](https://www.tldrlegal.com/l/lgpl-3.0)
 [![](http://github-release-version.herokuapp.com/github/laughedelic/pisces/release.svg)](https://github.com/laughedelic/pisces/releases/latest)
 [![](https://img.shields.io/badge/contact-gitter_chat-dd1054.svg)](https://gitter.im/laughedelic/pisces)
@@ -59,9 +59,9 @@ Just use [fisherman](https://github.com/fisherman/fisherman):
 fisher install laughedelic/pisces
 ```
 
-This plugin **requires fish v2.3** (currently in [beta](https://github.com/fish-shell/fish-shell/releases/tag/2.3b2)) for two reasons:
-- there was a bug [#2210](https://github.com/fish-shell/fish-shell/issues/2210) in v2.2 which would brake quotes handling
-- the new `string` builtin is just radical and simplifies life a lot
+> **NOTE:** This plugin requires fish **v2.3 or higher**:
+> - there was a bug [#2210](https://github.com/fish-shell/fish-shell/issues/2210) in v2.2 which would brake quotes handling
+> - it uses `string` builtin which was introduced in v2.3
 
 
 #### Changing the set of pairs
