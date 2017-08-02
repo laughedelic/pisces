@@ -59,7 +59,10 @@ Just use [fisherman](https://github.com/fisherman/fisherman):
 fisher install laughedelic/pisces
 ```
 
-> **NOTE:** This plugin requires fish **v2.3 or higher**:
+> **NOTE:** 
+> This plugin works best with **fish v2.6**, because it has a feature called [_bracketed (a.k.a safe) paste_](https://github.com/fish-shell/fish-shell/pull/3871) which solves the problem with pasting strings containing paired symbols (they get autoclosed), see [#6](https://github.com/laughedelic/pisces/issues/6) for details.
+>
+> The minimum required version of fish is v2.3, because
 > - there was a bug [#2210](https://github.com/fish-shell/fish-shell/issues/2210) in v2.2 which would brake quotes handling
 > - it uses `string` builtin which was introduced in v2.3
 
