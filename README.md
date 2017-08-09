@@ -34,7 +34,7 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
 
 * Using [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish):
   ```fish
-  omf install https://github.com/laughedelic/pisces
+  omf install pisces
   ```
 
 > **NOTE:**
