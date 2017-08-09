@@ -24,32 +24,6 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
   `...|`
 - the set of pairs is configurable
 
-Some ideas for further development:
-
-- autoclosing:
-  + [x] ignore closing `"` when trying to autocomplete a var (see [v0.3.0](https://github.com/laughedelic/pisces/releases/tag/v0.3.0))
-  + [ ] [#5](https://github.com/laughedelic/pisces/pull/5) (WIP): context-dependent autoclosing. Some particular cases:
-    * [x] **?** autoclose only when surrounded by non-word characters
-    * [x] ignore escaped symbols: `...\|` + <kbd>(</kbd> => `...\(|` (or autoclose them?)
-    * [ ] **?** ignore single quote (apostrophe) in the comments
-    + [x] multi-character pairs, similar to simple code-snippets: `for | end`, `if | end`, `begin; |; end`, etc.
-
-- empty pairs removal:
-  + [ ] treat pair as empty if it has only whitespaces inside: `...(|  )` + <kbd>backspace</kbd> ⇒ `...|`
-  + [ ] ~~remove an empty pair even when the cursor is after it (or go inside?)~~: `...()|` + <kbd>backspace</kbd> ⇒ `...|` or `...(|)` (this is probably confusing)
-  + [ ] key bindings for `^W` and similar? `foo bar(|)` + <kbd>ctrl</kbd><kbd>w</kbd> ⇒ `foo |`
-
-- [ ] optional <kbd>alt</kbd>+symbol keybindings that do something else, for example:
-  + surround the current token
-  + just insert single symbol
-  + jump after the closing symbol
-
-- [x] [#3](https://github.com/laughedelic/pisces/pull/3): support for vi-mode
-- [ ] autoreload on the `$pisces_pairs` var changes
-- [ ] restore previous keybindings instead of erasing them
-
-If you have any other ideas or feature requests, feel free to open an issue or just write me in the [chat](https://gitter.im/laughedelic/pisces).
-
 
 ### Installation
 
@@ -88,3 +62,31 @@ The default set of pairs:
 - `{,}` braces
 - `","` double quotes
 - `','` single quotes
+
+### Roadmap
+
+Here are some ideas for further development (some are already implemented):
+
+- autoclosing:
+  + [x] ignore closing `"` when trying to autocomplete a var (see [v0.3.0](https://github.com/laughedelic/pisces/releases/tag/v0.3.0))
+  + [ ] [#5](https://github.com/laughedelic/pisces/pull/5) (WIP): context-dependent autoclosing. Some particular cases:
+    * [x] **?** autoclose only when surrounded by non-word characters
+    * [x] ignore escaped symbols: `...\|` + <kbd>(</kbd> => `...\(|` (or autoclose them?)
+    * [ ] **?** ignore single quote (apostrophe) in the comments
+    + [x] multi-character pairs, similar to simple code-snippets: `for | end`, `if | end`, `begin; |; end`, etc.
+
+- empty pairs removal:
+  + [ ] treat pair as empty if it has only whitespaces inside: `...(|  )` + <kbd>backspace</kbd> ⇒ `...|`
+  + [ ] ~~remove an empty pair even when the cursor is after it (or go inside?)~~: `...()|` + <kbd>backspace</kbd> ⇒ `...|` or `...(|)` (this is probably confusing)
+  + [ ] key bindings for `^W` and similar? `foo bar(|)` + <kbd>ctrl</kbd><kbd>w</kbd> ⇒ `foo |`
+
+- [ ] optional <kbd>alt</kbd>+symbol keybindings that do something else, for example:
+  + surround the current token
+  + just insert single symbol
+  + jump after the closing symbol
+
+- [x] [#3](https://github.com/laughedelic/pisces/pull/3): support for vi-mode
+- [ ] autoreload on the `$pisces_pairs` var changes
+- [ ] restore previous keybindings instead of erasing them
+
+If you have any other ideas or feature requests, feel free to open an issue or just write me in the [chat](https://gitter.im/laughedelic/pisces).
