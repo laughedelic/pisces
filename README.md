@@ -53,13 +53,17 @@ If you have any other ideas or feature requests, feel free to open an issue or j
 
 ### Installation
 
-Just use [fisherman](https://github.com/fisherman/fisherman):
+* Using [fisherman](https://github.com/fisherman/fisherman):
+  ```fish
+  fisher install laughedelic/pisces
+  ```
 
-```fish
-fisher install laughedelic/pisces
-```
+* Using [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish):
+  ```fish
+  omf install https://github.com/laughedelic/pisces
+  ```
 
-> **NOTE:** 
+> **NOTE:**
 > This plugin works best with **fish v2.6**, because it has a feature called [_bracketed (a.k.a safe) paste_](https://github.com/fish-shell/fish-shell/pull/3871) which solves the problem with pasting strings containing paired symbols (they get autoclosed), see [#6](https://github.com/laughedelic/pisces/issues/6) for details.
 >
 > The minimum required version of fish is v2.3, because
