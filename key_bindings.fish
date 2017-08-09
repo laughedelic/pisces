@@ -1,8 +1,9 @@
 function key_bindings
 
     set -l _pisces_bind_mode default
-    if [ "$fish_key_bindings" = 'fish_vi_key_bindings' ]
-        set _pisces_bind_mode insert
+    switch $fish_key_bindings
+        case 'fish_vi_key_bindings' 'fish_hybrid_key_bindings'
+            set _pisces_bind_mode insert
     end
 
     set -q pisces_pairs

@@ -1,7 +1,8 @@
-# FIXME: won't work as expected if user has changed the mode after installation
+# NOTE: won't work as expected if user has changed the mode after installation
 set -l _pisces_bind_mode default
-if [ "$fish_key_bindings" = 'fish_vi_key_bindings' ]
-    set _pisces_bind_mode insert
+switch $fish_key_bindings
+    case 'fish_vi_key_bindings' 'fish_hybrid_key_bindings'
+        set _pisces_bind_mode insert
 end
 
 for pair in $pisces_pairs
