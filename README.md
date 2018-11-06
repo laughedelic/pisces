@@ -29,7 +29,7 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
 
 * Using [fisherman](https://github.com/fisherman/fisherman):
   ```fish
-  fisher install laughedelic/pisces
+  fisher add laughedelic/pisces
   ```
 
 * Using [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish):
