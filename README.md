@@ -24,6 +24,12 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
   `...|`
 - the set of pairs is configurable
 
+To disable completing pairs unless the cursor is at the end of the line, set
+the `$pisces_only_insert_at_eol` variable:
+
+```fish
+set -U pisces_only_insert_at_eol 1
+```
 
 ### Installation
 
