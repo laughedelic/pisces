@@ -28,22 +28,20 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
 <details>
 <summary>Notes on fish 2.x compatibility</summary>
 
-The _minimum recommended_ version of fish is v2.6, because
-- it has a feature called [_bracketed (a.k.a safe) paste_](https://github.com/fish-shell/fish-shell/pull/3871) which solves the problem with pasting strings containing paired symbols (they get autoclosed), see [#6](https://github.com/laughedelic/pisces/issues/6) for details.
-
-The _minimum required_ version of fish is v2.3, because
-- there was a bug [#2210](https://github.com/fish-shell/fish-shell/issues/2210) in v2.2 which would brake quotes handling
-- it uses `string` builtin which was introduced in v2.3
+> The _minimum recommended_ version of fish is v2.6, because
+> - it has a feature called [_bracketed (a.k.a safe) paste_](https://github.com/fish-shell/fish-shell/pull/3871) which solves the problem with pasting strings containing paired symbols (they get autoclosed), see [#6](https://github.com/laughedelic/pisces/issues/6) for details.
+>
+> The _minimum required_ version of fish is v2.3, because
+> - there was a bug [#2210](https://github.com/fish-shell/fish-shell/issues/2210) in v2.2 which would brake quotes handling
+> - it uses `string` builtin which was introduced in v2.3
 
 </details>
 
-- Using [Fisher](https://github.com/jorgebucaran/fisher) 3.x:
+- Using [Fisher](https://github.com/jorgebucaran/fisher):
 
   ```fish
   fisher install laughedelic/pisces
   ```
-
-  > Notice that Fisher 4.x is not supported yet. See the ongoing [discussion](https://github.com/laughedelic/pisces/pull/26) for more context.
 
 - Using [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish):
 
