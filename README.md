@@ -49,6 +49,8 @@ Here `|` denotes the current cursor position. No manual cursor motion involved :
   omf install pisces
   ```
 
+  Notice that you will need to _restart_ fish to get this new installation working. This is specific to the way oh-my-fish handles installation.
+
 ## Configuration
 
 ### Only completing at the end of the line
