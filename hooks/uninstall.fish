@@ -1,0 +1,1 @@
+emit pisces_uninstall

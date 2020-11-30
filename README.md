@@ -40,7 +40,7 @@ The _minimum required_ version of fish is v2.3, because
 - Using [Fisher](https://github.com/jorgebucaran/fisher) 3.x:
 
   ```fish
-  fisher add laughedelic/pisces
+  fisher install laughedelic/pisces
   ```
 
   > Notice that Fisher 4.x is not supported yet. See the ongoing [discussion](https://github.com/laughedelic/pisces/pull/26) for more context.
