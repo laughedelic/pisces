@@ -20,8 +20,7 @@ bind -M $_pisces_bind_mode \177 _pisces_backspace
 bind -M $_pisces_bind_mode \t _pisces_complete
 
 
-set -l uninstall_event (basename (status -f) .fish)_uninstall
-function $uninstall_event --on-event $uninstall_event
+function _pisces_uninstall --on-event pisces_uninstall
     # NOTE: won't work as expected if user has changed the mode after installation
     set -l _pisces_bind_mode default
     switch $fish_key_bindings
